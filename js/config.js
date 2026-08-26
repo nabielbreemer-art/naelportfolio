@@ -3,8 +3,8 @@
  * Only the Supabase anon/public key may be exposed in frontend code.
  * NEVER expose the Supabase service_role key.
  */
-const SUPABASE_URL = "YOUR_SUPABASE_URL";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+const SUPABASE_URL = "https://ctsucjrevcaavfpjyssl.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_8gVafEpvoHry4T7ZGN06XQ_bhu8sHv7";
 
 /* Optional hosted contact form settings. */
 const CONTACT_FORM = {

@@ -1,0 +1,4 @@
+(function () {
+  const fields = `<div class="form-row"><label>Name<input name="name" required></label><label>Category<input name="category" required placeholder="Frontend"></label></div><div class="form-row"><label>Level<select name="level"><option>Advanced</option><option>Working</option><option>Learning</option></select></label><label>Icon<input name="icon" placeholder="◇"></label></div><label>Sort order<input name="sort_order" type="number" min="0" value="1"></label>`;
+  window.skillsApi = { fields, async list(){const r=await db.list("skills","*",{order:"sort_order"});if(r.error)throw r.error;return r.data}, async save(id,payload){return id?db.update("skills",id,payload):db.insert("skills",payload)}, async remove(id){return db.remove("skills",id)} };
+})();

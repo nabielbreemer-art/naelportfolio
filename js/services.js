@@ -1,0 +1,4 @@
+(function () {
+  const fields = `<div class="form-row"><label>Title<input name="title" required></label><label>Icon<input name="icon" placeholder="◇"></label></div><label>Description<textarea name="description" rows="3"></textarea></label><div class="form-row"><label>Sort order<input name="sort_order" type="number" min="0" value="1"></label><label class="checkbox-label"><input name="featured" type="checkbox"> Featured service</label></div>`;
+  window.servicesApi = { fields, async list(){const r=await db.list("services","*",{order:"sort_order"});if(r.error)throw r.error;return r.data}, async save(id,payload){return id?db.update("services",id,payload):db.insert("services",payload)}, async remove(id){return db.remove("services",id)} };
+})();

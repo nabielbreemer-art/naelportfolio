@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alex Morgan — Creative Developer</title>
+  <meta name="description" content="A thoughtful digital portfolio for a creative developer and designer.">
+  <meta name="theme-color" content="#0b0e14">
+  <meta property="og:title" content="Alex Morgan — Creative Developer">
+  <meta property="og:description" content="Designing and building calm, useful digital experiences.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="site-noise" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Alex Morgan home"><span class="brand-mark">AM</span><span>Alex Morgan<span class="brand-dot">.</span></span></a>
+      <button class="menu-toggle icon-button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#services">Services</a><a href="#contact">Contact</a>
+        <button class="theme-toggle icon-button" data-theme-toggle aria-label="Toggle color theme"><span class="theme-icon">☼</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-pad" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span><span id="hero-location">Tokyo / Worldwide</span></p>
+          <h1>I build <em>quietly bold</em><br>digital experiences.</h1>
+          <p class="hero-lede" id="hero-bio">Creative developer and product-minded designer turning complex ideas into clear, useful interfaces.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">View selected work <span>↗</span></a>
+            <a class="button button-ghost" href="#contact">Let's talk <span>↗</span></a>
+          </div>
+          <div class="social-row" id="hero-socials" aria-label="Social links"></div>
+        </div>
+        <div class="hero-visual reveal reveal-delay">
+          <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+          <div class="hero-card">
+            <div class="portrait-placeholder" id="hero-portrait"><span>AM</span></div>
+            <div class="hero-card-caption"><span>Currently crafting</span><strong id="hero-focus">Digital products with soul</strong></div>
+          </div>
+          <div class="floating-note note-top"><span class="status-dot"></span> Available for select projects</div>
+          <div class="floating-note note-bottom"><span class="mono">04</span><span>Years making<br>on the web</span></div>
+        </div>
+      </div>
+      <div class="scroll-cue container"><span>Scroll to explore</span><span class="scroll-line"></span></div>
+    </section>
+
+    <section class="section-pad section-light" id="about">
+      <div class="container two-col">
+        <div class="section-label reveal"><span class="mono">01</span><span>About me</span></div>
+        <div class="about-content reveal">
+          <h2>Good work lives<br>between <em>logic &amp; feeling.</em></h2>
+          <p class="large-copy" id="about-bio">I care about the details people feel but rarely name: the right amount of friction, a layout that breathes, and software that feels obvious on the first try.</p>
+          <div class="fact-grid">
+            <div><span class="fact-label">Based in</span><strong id="about-location">Tokyo, Japan</strong></div>
+            <div><span class="fact-label">Experience</span><strong><span id="about-years">04</span>+ years</strong></div>
+            <div><span class="fact-label">Speciality</span><strong id="about-profession">Creative Development</strong></div>
+            <div><span class="fact-label">Availability</span><strong class="available">Open to select work</strong></div>
+          </div>
+          <a class="text-link" id="resume-link" href="#" target="_blank" rel="noopener noreferrer">View résumé <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="skills">
+      <div class="container">
+        <div class="section-heading reveal"><div class="section-label"><span class="mono">02</span><span>Capabilities</span></div><h2>A small toolkit,<br><em>sharply used.</em></h2></div>
+        <div class="skill-groups" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <section class="section-pad section-light" id="projects">
+      <div class="container">
+        <div class="projects-head reveal"><div><div class="section-label"><span class="mono">03</span><span>Selected work</span></div><h2>Things I've<br><em>made useful.</em></h2></div><p class="section-intro">A few projects that sit at the intersection of thoughtful design, robust technology, and a little bit of magic.</p></div>
+        <div class="project-toolbar reveal"><div class="filter-list" id="project-filters"><button class="filter active" data-filter="all">All work</button><button class="filter" data-filter="Web">Web</button><button class="filter" data-filter="UI/UX">UI/UX</button><button class="filter" data-filter="Mobile">Mobile</button><button class="filter" data-filter="Other">Other</button></div><label class="search-field"><span>⌕</span><input id="project-search" type="search" placeholder="Search projects" aria-label="Search projects"></label></div>
+        <div class="projects-grid" id="projects-grid"></div>
+        <div class="empty-state hidden" id="projects-empty"><span class="empty-icon">◇</span><h3>No projects found</h3><p>Try a different search or filter.</p></div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="experience">
+      <div class="container two-col">
+        <div class="section-label reveal"><span class="mono">04</span><span>Experience</span></div>
+        <div class="timeline reveal" id="experience-list"></div>
+      </div>
+    </section>
+
+    <section class="section-pad section-dark" id="services">
+      <div class="container">
+        <div class="section-heading light reveal"><div class="section-label"><span class="mono">05</span><span>What I do</span></div><h2>From first sketch<br>to <em>final detail.</em></h2></div>
+        <div class="services-grid" id="services-grid"></div>
+      </div>
+    </section>
+
+    <section class="section-pad section-light contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal"><div class="section-label"><span class="mono">06</span><span>Get in touch</span></div><h2>Have a good<br><em>idea?</em></h2><p class="section-intro">Tell me a little about what you're working on. I read every message and usually reply within two working days.</p><div class="contact-details"><a id="contact-email" href="mailto:hello@example.com">hello@example.com</a><span class="contact-divider">/</span><a id="contact-whatsapp" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div>
+        <form class="contact-form reveal reveal-delay" id="contact-form" action="mailto:hello@example.com" method="post" enctype="text/plain"><div class="form-row"><label>Your name<input name="name" required placeholder="Jane Smith"></label><label>Email address<input name="email" type="email" required placeholder="jane@example.com"></label></div><label>Subject<input name="subject" required placeholder="A new project"></label><label>Message<textarea name="message" rows="5" required placeholder="A few words about your idea..."></textarea></label><button class="button button-primary" type="submit">Send message <span>↗</span></button><p class="form-note">This form opens your email client. Configure Formspree or EmailJS in <span class="mono">js/config.js</span> for hosted submissions.</p></form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-wrap"><a class="brand" href="#top"><span class="brand-mark">AM</span><span>Alex Morgan<span class="brand-dot">.</span></span></a><span class="footer-copy">Designed &amp; built with intention © <span id="current-year"></span></span><a href="#top" class="back-top">Back to top ↑</a></div></footer>
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js" defer></script><script src="js/supabase.js" defer></script><script src="js/utils.js" defer></script><script src="js/projects.js" defer></script><script src="js/app.js" defer></script>
+</body>
+</html>

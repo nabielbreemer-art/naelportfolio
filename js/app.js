@@ -12,7 +12,7 @@
     const setText = (selector, value) => { const el = ui.$(selector); if (el && value !== undefined && value !== null) el.textContent = value; };
     setText("#hero-location", person.location || "Worldwide"); setText("#hero-bio", person.bio); setText("#about-bio", person.bio); setText("#about-location", person.location); setText("#about-years", String(person.experience_years || 0).padStart(2,"0")); setText("#about-profession", person.profession); setText("#contact-email", person.email || "hello@example.com");
     const email = ui.$("#contact-email"); if (email) email.href = `mailto:${person.email || "hello@example.com"}`;
-    if (person.avatar_url) ui.$("#hero-portrait").style.backgroundImage = `url("${person.avatar_url}")`;
+    if (person.avatar_url) { const portrait = ui.$("#hero-portrait"); portrait.style.backgroundImage = `url("${person.avatar_url}")`; portrait.classList.add("has-photo"); }
     const resume = ui.$("#resume-link"); if (resume && person.resume_url) resume.href = person.resume_url; else if (resume) resume.classList.add("hidden");
     const whatsapp = ui.$("#contact-whatsapp"); if (whatsapp && person.phone) whatsapp.href = `https://wa.me/${String(person.phone).replace(/\D/g,"")}`; else if (whatsapp) whatsapp.classList.add("hidden");
     renderSocials(socials.data || DEMO_SOCIAL); renderSkills(skills.data || []); renderExperience(experience.data || []); renderServices(services.data || []); renderProjects();

@@ -16,7 +16,14 @@
   async function loadProjectDetail() {
     const id = new URLSearchParams(location.search).get("id");
     const target = ui.$("#project-detail-content"); if (!target || !id) return;
-    const result = await db.one("projects","*",{eq:{id}});
+    let result;
+    try {
+      result = await db.one("projects","*",{eq:{id}});
+    } catch (error) {
+      target.innerHTML = `<div class="detail-loading"><h2>Unable to load this project</h2><p>${ui.esc(error?.message || "Something went wrong. Please try again.")}</p><a class="text-link" href="index.html#projects">Back to work ↗</a></div>`;
+      return;
+    }
+    if (result.error) { target.innerHTML = `<div class="detail-loading"><h2>Unable to load this project</h2><p>${ui.esc(result.error.message || "Something went wrong. Please try again.")}</p><a class="text-link" href="index.html#projects">Back to work ↗</a></div>`; return; }
     const project = result.data;
     if (!project || (!result.demo && project.status !== "published")) { target.innerHTML = `<div class="detail-loading"><h2>Project not found</h2><p>That project is not public or no longer exists.</p><a class="text-link" href="index.html#projects">Back to work ↗</a></div>`; return; }
     const tech = Array.isArray(project.technologies) ? project.technologies : String(project.technologies || "").split(",");

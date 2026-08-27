@@ -6,7 +6,9 @@
   const formatDate = (value, current = false) => {
     if (current) return "Present";
     if (!value) return "—";
-    return new Intl.DateTimeFormat("en-US",{month:"short",year:"numeric"}).format(new Date(`${value}T00:00:00`));
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Date(`${value}T00:00:00`) : new Date(value);
+    if (isNaN(date.getTime())) return "—";
+    return new Intl.DateTimeFormat("en-US",{month:"short",year:"numeric"}).format(date);
   };
   const getTheme = () => localStorage.getItem("portfolio-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
   const applyTheme = theme => { document.documentElement.dataset.theme = theme; localStorage.setItem("portfolio-theme", theme); $$(".theme-icon").forEach(el => el.textContent = theme === "dark" ? "☼" : "☾"); };

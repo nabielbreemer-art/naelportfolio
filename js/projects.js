@@ -24,5 +24,11 @@
     document.title = `${project.title} — Alex Morgan`;
     target.innerHTML = `<div class="detail-hero"><p class="eyebrow"><span class="eyebrow-line"></span>${ui.esc(project.category || "Selected work")}</p><h1>${ui.esc(project.title)}</h1></div><div class="detail-image"${imageStyle}></div><div class="detail-grid"><div class="detail-description">${ui.esc(project.description)}</div><aside class="detail-side"><dl><div><dt>Category</dt><dd>${ui.esc(project.category || "—")}</dd></div><div><dt>Technology</dt><dd>${tech.filter(Boolean).map(ui.esc).join(" · ") || "—"}</dd></div><div><dt>Date</dt><dd>${ui.formatDate(project.created_at)}</dd></div><div><dt>Links</dt><dd>${project.demo_url ? `<a href="${ui.esc(project.demo_url)}" target="_blank" rel="noopener noreferrer">Live demo ↗</a><br>` : ""}${project.github_url ? `<a href="${ui.esc(project.github_url)}" target="_blank" rel="noopener noreferrer">Repository ↗</a>` : ""}</dd></div></dl></aside></div>`;
   }
-  window.projectApi = { getProjects, projectCard, loadProjectDetail };
+  async function save(id, payload) {
+    return id ? db.update("projects", id, payload) : db.insert("projects", payload);
+  }
+  async function remove(id) {
+    return db.remove("projects", id);
+  }
+  window.projectApi = { getProjects, projectCard, loadProjectDetail, save, remove };
 })();

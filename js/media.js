@@ -15,5 +15,9 @@
     const failed = folders.find(result => result.error); if (failed) throw failed.error;
     return folders.flatMap((result,index) => result.data.filter(item=>item.id).map(item=>({name:`${["projects","profile"][index]}/${item.name}`,path:`${["projects","profile"][index]}/${item.name}`,url:portfolio.client.storage.from("portfolio-images").getPublicUrl(`${["projects","profile"][index]}/${item.name}`).data.publicUrl})));
   }
-  window.mediaApi={allowed,max,upload,list};
+  async function remove(path) {
+    if(!portfolio.configured) return {error:null,demo:true};
+    return portfolio.client.storage.from("portfolio-images").remove([path]);
+  }
+  window.mediaApi={allowed,max,upload,list,remove};
 })();
